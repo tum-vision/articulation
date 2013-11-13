@@ -1,0 +1,16 @@
+<launch>
+	<node 
+		pkg="articulation_models" type="learn_prior.py" name="learn_prior" output="screen"
+		args="
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/001.log 
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/002.log 
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/003.log 
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/004.log 
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/005.log 
+		"/>
+
+	<node pkg="articulation_models" type="model_learner_prior" name="model_learner_prior" output="screen"/>
+
+	<node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/demo_fitting/fit_models.vcg" />
+
+</launch>

@@ -1,0 +1,42 @@
+<stack name="articulation" version="0.1.2">
+  <description brief="Kinematic models for articulated objects (cabinet doors and drawers), including model fitting, model selection and visualization.">
+
+<p>
+This stack provides software that can recover articulation models given 3D or 6D pose trajectories. 
+</p>
+
+<p>
+The <a href="http://ros.org/wiki/articulation_msgs">articulation_msgs</a> package defines messages and services for exchanging trajectories and kinematic models.
+</p>
+
+<p>
+The <a href="http://ros.org/wiki/articulation_structure">articulation_models</a> package provides several nodes for fitting and selecting kinematic models for articulated objects. We employ maximum-likelihood sample consensus (MLESAC) for robustly estimating the kinematic parameters, and the Bayesian information criterion (BIC) for selecting between alternative model classes. The learned model assigns likelihoods to observed trajectories, predict the latent configuration of the articulated object, projects the noisy poses onto the model, predict the Jacobian, etc.
+</p>
+
+<p>
+The <a href="http://ros.org/wiki/articulation_structure">articulation_structure</a> package provides a service for fitting and selecting the kinematic model for articulated objects consisting of more than two parts. 
+</p>
+
+<p>
+Several tutorials, example launch files and demonstration videos are available in the package <a href="http://ros.org/wiki/articulation_tutorials">articulation_tutorials</a>. 
+</p>
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation</url>
+
+  <depend stack="common" /> <!-- plugin lib -->
+  <depend stack="common_msgs" /> <!-- geometry_msgs -->
+  <depend stack="driver_common" /> <!-- dynamic_reconfigure -->
+  <depend stack="geometry" /> <!-- tf -->
+  <depend stack="ros" /> <!-- roscpp, message_filters -->
+  <depend stack="ros_comm" /> 
+  <depend stack="visualization" /> <!-- rviz -->
+  <depend stack="visualization_common" /> <!-- visualization_msgs -->
+  <depend stack="freiburg_tools" /> <!-- camera, .. -->
+  <depend stack="image_transport_plugins" /> <!-- compressed, .. -->
+  <depend stack="image_pipeline" /> <!-- image_proc, .. -->
+  <depend stack="vision_opencv" />
+</stack>

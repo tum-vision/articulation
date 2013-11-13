@@ -1,0 +1,21 @@
+# Align a data trajectory to a model trajectory
+#
+# For more details, see the documentation of the
+# model_learner_prior node of the articulation_models package,
+# http://www.ros.org/wiki/articulation_models
+#
+
+articulation_msgs/ModelMsg model              # contains the model trajectory
+articulation_msgs/ModelMsg data               # contains the data trajectory
+---
+articulation_msgs/ModelMsg model_aligned      # contains the transformed model
+                                              # trajectory, that is now aligned to
+                                              # the data trajectory
+articulation_msgs/ModelMsg data_aligned       # contains the transformed data
+                                              # trajectory, that is now aligned to
+                                              # the model trajectory
+float64[9] R                                  # rotation matrix
+float64[3] T                                  # translation vector
+float64 dist_rot                              # angle (in radians) of the rotation
+float32 dist_trans                            # distance of the translation
+

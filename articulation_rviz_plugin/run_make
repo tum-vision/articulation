@@ -1,0 +1,5 @@
+#!/bin/bash
+source /opt/ros/latest/setup.sh
+export ROS_PACKAGE_PATH=~/alufr-ros-pkg:$ROS_PACKAGE_PATH
+cd $(dirname $0)
+make -s

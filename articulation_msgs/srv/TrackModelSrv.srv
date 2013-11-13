@@ -1,0 +1,19 @@
+# Generic service description for model fitting, selection, and evaluation for articulated links
+#
+# A client requests a model operation (like model fitting, model selection
+# or model evaluation), by storing the observed trajectory in model.track.pose[],
+# optionally specifying a model name in model.name and optional parameters in
+# model.params. The nodes model_learner_srv and model_learner_prior offer
+# various services. For more details, see the documentation at
+# http://www.ros.org/wiki/articulation_models
+#
+#
+
+articulation_msgs/ModelMsg model      # request (e.g., containing an observed
+                                      # trajectory of an articulated object)
+---
+articulation_msgs/ModelMsg model      # response (e.g., after model fitting and
+                                      # selection, contains the model name,
+                                      # and the projection of the observed trajectory
+                                      # on the model
+ 

@@ -1,0 +1,38 @@
+Background\ ColorR=0.752941
+Background\ ColorG=0.752941
+Background\ ColorB=0.752941
+Fixed\ Frame=/openni_camera
+Target\ Frame=/openni_camera
+Camera.Alpha=0.5
+Camera.Enabled=1
+Camera.Image\ Topic=/camera/rgb/image_color
+Camera.Transport\ Hint=raw
+Markers.Enabled=1
+Markers.Marker\ Topic=/structure
+Markers.decoration=1
+Markers.decoration.poses=1
+Markers.link=1
+Markers.modelname=1
+Markers2.Enabled=1
+Markers2.Marker\ Topic=/camera/visualization_marker
+Markers2.pose_axis_0=1
+Markers2.pose_axis_1=1
+Markers2.pose_name_0=1
+Markers2.pose_name_1=1
+Tool\ 2D\ Nav\ GoalTopic=goal
+Tool\ 2D\ Pose\ EstimateTopic=initialpose
+Camera\ Type=rviz::OrbitViewController
+Camera\ Config=1.061 0.027008 0.503661 -0.0553016 0.370137 -0.0627334
+Property\ Grid\ State=selection=;expanded=.Global Options,Markers.Enabled,Markers.Enabled.Markers.Namespaces,Markers2.Enabled,Markers2.Enabled.Markers2.Namespaces;scrollpos=0,0;splitterpos=245,476;ispageselected=1
+[Display0]
+Name=Camera
+Package=rviz
+ClassName=rviz::CameraDisplay
+[Display1]
+Name=Markers
+Package=rviz
+ClassName=rviz::MarkerDisplay
+[Display2]
+Name=Markers2
+Package=rviz
+ClassName=rviz::MarkerDisplay

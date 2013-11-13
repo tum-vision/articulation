@@ -1,0 +1,88 @@
+<launch>
+<group ns="eval_windo672">
+<!--
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/dishwasher/008.log
+-->
+	<node 
+		pkg="articulation_models" type="window_eval.py" name="simple_publisher" output="screen" cwd="node" required="true"
+		args="eval_model_estimators_50_1000_dof
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/008.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/008.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/008.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/008.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/008.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/002.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/003.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/004.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/005.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/006.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/007.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/008.log
+		" >
+    <param name="sigma_position" value="0.05"/>
+    <param name="models" value="2,4,0"/>
+    <param name="downsample" value="1000"/>
+    <param name="show" value="True"/>
+  </node>
+
+	<node pkg="articulation_models" type="model_learner_prior" name="model_learner_prior" output="log"> 
+    <param name="filter_models" value="rotational prismatic"/>
+    <param name="sigma_position" value="0.03"/>
+  </node>
+
+</group>
+</launch>

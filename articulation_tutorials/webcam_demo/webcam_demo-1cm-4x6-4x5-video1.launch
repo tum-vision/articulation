@@ -1,0 +1,47 @@
+<launch>
+  <node name="uvc_cam" pkg="uvc_cam2" type="sender" output="log">
+    <param name="D" type="string" value="-0.0834232 0.120545 -0.0023918 0.0175383 0 "/>
+    <param name="K" type="string" value="578.252 0 350.204 0 575.115 207.606 0 0 1 "/>
+    <param name="R" type="string" value="1 0 0 0 1 0 0 0 1 "/>
+    <param name="P" type="string" value="578.252 0 350.204 0 0 575.115 207.606 0 0 0 1 0 "/>
+    <param name="device" type="string" value="/dev/video1"/>
+    <param name="width"  type="int" value="640"/>
+    <param name="height" type="int" value="480"/>
+    <param name="fps" type="int" value="2"/>
+  </node>
+
+  <group ns="camera" clear_params="true">
+    <node name="image_proc" pkg="image_proc" type="image_proc" output="log"/>
+    
+    <node name="pose_visualizer" pkg="checkerboard_detector2" type="pose_visualizer.py" output="screen"/>
+
+    <node pkg="checkerboard_detector2" type="checkerboard_detector2" respawn="false" 
+    output="log" name="checkerboard_detector">
+      <param name="display" type="int" value="0"/>
+      
+	
+      <param name="rect0_size_x" type="double" value="0.01"/>
+      <param name="rect0_size_y" type="double" value="0.01"/>
+      <param name="grid0_size_x" type="int" value="4"/>
+      <param name="grid0_size_y" type="int" value="6"/>
+
+      <param name="rect1_size_x" type="double" value="0.01"/>
+      <param name="rect1_size_y" type="double" value="0.01"/>
+      <param name="grid1_size_x" type="int" value="4"/>
+      <param name="grid1_size_y" type="int" value="5"/>
+    </node>
+  </group>
+  
+  <node name="articulation_collector" pkg="articulation_structure" type="articulation_collector.py" output="screen">
+    <param name="sigma_position" value="0.01"/>
+    <param name="sigma_orientation" value="0.1"/>
+    <param name="samples" value="50"/>
+  </node>
+  
+  <node name="structure_learner" pkg="articulation_structure" type="structure_learner_srv" output="screen">
+    <param name="filter_models" value="rigid prismatic rotational"/>
+  </node>
+
+  <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/webcam_demo/webcam_demo.vcg" />
+
+</launch>

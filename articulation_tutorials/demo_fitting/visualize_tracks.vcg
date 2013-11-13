@@ -1,0 +1,32 @@
+Background\ ColorR=0.313726
+Background\ ColorG=0.313726
+Background\ ColorB=0.313726
+Fixed\ Frame=/
+Target\ Frame=/
+Articulated\ Track.Alpha=1
+Articulated\ Track.ColorR=1
+Articulated\ Track.ColorG=0
+Articulated\ Track.ColorB=0
+Articulated\ Track.Enabled=1
+Articulated\ Track.Line\ Width=0.002
+Articulated\ Track.Pose\ Color=0
+Articulated\ Track.Style=0
+Articulated\ Track.Topic=/track
+Articulated\ Track.Track\ Color=2
+Axes.Enabled=1
+Axes.Length=0.1
+Axes.Radius=0.01
+Axes.Reference\ Frame=<Fixed Frame>
+Tool\ 2D\ Nav\ GoalTopic=goal
+Tool\ 2D\ Pose\ EstimateTopic=initialpose
+Camera\ Type=rviz::OrbitViewController
+Camera\ Config=0.746 1.90585 0.917269 0.0438266 -0.129017 0.0566629
+Property\ Grid\ State=selection=;expanded=Axes.Enabled,Articulated Track.Enabled,Articulated Track.Enabled.Articulated Track.StatusTopStatus;scrollpos=0,0;splitterpos=172,345;ispageselected=1
+[Display0]
+Name=Axes
+Package=rviz
+ClassName=rviz::AxesDisplay
+[Display1]
+Name=Articulated Track
+Package=articulation_rviz_plugin
+ClassName=articulation_rviz_plugin::TrackDisplay

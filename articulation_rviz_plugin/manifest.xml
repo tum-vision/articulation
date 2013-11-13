@@ -1,0 +1,28 @@
+<package>
+  <description brief="Visualizes kinematic models for articulated objects like doors and drawers in RVIZ.">
+
+<p>
+This package contains two visualization plugins for the RVIZ viewer, for displaying messages of articulation_msgs/TrackMsg and articulation_msgs/ModelMsg messages. This is useful for the debugging and visualization of fitted articulation models. 
+</p>
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation_rviz_plugin</url>
+
+  <depend package="rviz"/>
+  <depend package="roscpp"/>
+  
+  <depend package="tf"/>
+  <depend package="message_filters"/>
+  
+  <depend package="articulation_models"/>
+    
+  <export>
+    <rviz plugin="${prefix}/lib/rviz_plugin.yaml"/>
+  </export>
+
+</package>
+
+

@@ -1,0 +1,37 @@
+<package>
+  <description brief="Iteratively Closest Point library">
+     <p>
+     ICP, an open-source implementation of the iteratively closest point library.
+     </p>
+
+     <p>
+     ROS wrapper for the implementation of the 
+     Iteratively Closest Point algorithm, originally
+     implemented by Per Bergstrom, released under BSD.
+     It uses a kd-Tree library, originally 
+     implemented by Guy Shechter, released under BSD.
+     </p>
+
+     <p>
+     http://www.mathworks.com/matlabcentral/fileexchange/16766
+     </p>
+     <p>
+     http://www.mathworks.com/matlabcentral/fileexchange/4586-k-d-tree
+     </p>
+  </description>
+  <author>Maintained by Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/icp</url>
+  
+  <depend package="articulation_msgs" />
+  <depend package="bullet" />
+  <depend package="roscpp" />
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -licp -Wl,-rpath,${prefix}/lib"/>
+  </export>
+  
+</package>
+
+

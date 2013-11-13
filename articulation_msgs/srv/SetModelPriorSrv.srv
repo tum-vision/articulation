@@ -1,0 +1,9 @@
+# Store a list of models as a prior
+#
+# For more details, see the documentation of the
+# model_learner_prior node of the articulation_models package,
+# http://www.ros.org/wiki/articulation_models
+#
+articulation_msgs/ModelMsg[] model
+---
+

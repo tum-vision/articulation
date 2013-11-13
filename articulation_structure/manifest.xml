@@ -1,0 +1,23 @@
+<package>
+  <description brief="articulation_structure">
+
+     articulation_structure
+
+  </description>
+  <author>sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation_closedchain</url>
+  <!-- does not work in fuerte
+  <depend package="articulation_rviz_plugin"/>
+  -->
+  <depend package="geometry_msgs"/>
+  <depend package="visualization_msgs"/>
+  <depend package="tf"/>
+  <rosdep name="eigen"/>
+  <depend package="hogman_minimal"/>
+  <depend package="articulation_msgs"/>
+  <depend package="articulation_models"/>
+</package>
+
+

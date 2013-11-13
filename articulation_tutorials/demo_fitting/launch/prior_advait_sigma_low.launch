@@ -1,0 +1,35 @@
+<launch>
+	<node 
+		pkg="articulation_models" type="prior_publisher.py" name="simple_publisher" output="screen"
+		args="
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/001.log 
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/001.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/002.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/002.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/003.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/003.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/004.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/004.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/005.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/005.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/006.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/006.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/007.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/007.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/008.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/008.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/009.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/009.log 
+			$(find articulation_tutorials)/demo_fitting/data/drawer_one/010.log
+			$(find articulation_tutorials)/demo_fitting/data/cabinet_one/010.log 
+		" >
+  </node>
+
+	<node pkg="articulation_models" type="model_learner_prior" name="model_learner" output="screen"> 
+    <param name="filter_models" value="rotational prismatic"/>
+    <param name="sigma_position" value="0.005"/>
+  </node>
+
+	<node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/demo_fitting/prior_clusters_advait.vcg" />
+
+</launch>

@@ -1,0 +1,21 @@
+<package>
+  <description brief="articulation_perception">
+This package provides a detector for cabinet fronts from dense depth images (as produced by Microsoft's Kinect sensor or the PR2's projected texture stereo system). The basic approach is to segment each image into planes and to search for the rectangle with the maximum support. 
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation_perception</url>
+  <depend package="visualization_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="opencv2"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tf_conversions"/>
+  <depend package="tf"/>
+  <depend package="articulation_msgs"/>
+
+</package>
+
+

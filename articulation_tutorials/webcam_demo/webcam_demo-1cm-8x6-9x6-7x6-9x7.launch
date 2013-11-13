@@ -1,0 +1,57 @@
+<launch>
+  <node name="uvc_cam" pkg="uvc_cam2" type="sender" output="screen">
+    <param name="D" type="string" value="-0.041708 0.076300 -0.003620 -0.020760 0.0000"/>
+    <param name="K" type="string" value="1155.413555 0.000000 640 0.000000 1153.221896 512.0 0.000000 0.000000 1.000000"/>
+    <param name="R" type="string" value="1 0 0 0 1 0 0 0 1 "/>
+    <param name="P" type="string" value="1155.413555 0.000000 640.0 0.000000 0.000000 1153.221896 512.0 0.000000 0.000000 0.000000 1.000000 0.000000"/>
+    <param name="device" type="string" value="/dev/video0"/>
+    <param name="width"  type="int" value="1280"/>
+    <param name="height" type="int" value="1024"/>
+    <param name="fps" type="int" value="7"/>
+  </node>
+
+  <group ns="camera" clear_params="true">
+    <node name="image_proc" pkg="image_proc" type="image_proc" output="screen"/>
+    
+    <node name="pose_visualizer" pkg="checkerboard_detector2" type="pose_visualizer.py" output="screen"/>
+
+    <node pkg="checkerboard_detector2" type="checkerboard_detector2" respawn="false" 
+    output="screen" name="checkerboard_detector">
+      <param name="display" type="int" value="0"/>
+      
+	
+      <param name="rect0_size_x" type="double" value="0.01"/>
+      <param name="rect0_size_y" type="double" value="0.01"/>
+      <param name="grid0_size_x" type="int" value="9"/>
+      <param name="grid0_size_y" type="int" value="6"/>
+
+      <param name="rect1_size_x" type="double" value="0.01"/>
+      <param name="rect1_size_y" type="double" value="0.01"/>
+      <param name="grid1_size_x" type="int" value="8"/>
+      <param name="grid1_size_y" type="int" value="6"/>
+
+      <param name="rect2_size_x" type="double" value="0.01"/>
+      <param name="rect2_size_y" type="double" value="0.01"/>
+      <param name="grid2_size_x" type="int" value="7"/>
+      <param name="grid2_size_y" type="int" value="6"/>
+
+      <param name="rect3_size_x" type="double" value="0.01"/>
+      <param name="rect3_size_y" type="double" value="0.01"/>
+      <param name="grid3_size_x" type="int" value="9"/>
+      <param name="grid3_size_y" type="int" value="7"/>
+    </node>
+  </group>
+  
+  <node name="articulation_collector" pkg="articulation_structure" type="articulation_collector.py" output="screen">
+    <param name="sigma_position" value="0.01"/>
+    <param name="sigma_orientation" value="0.3"/>
+    <param name="samples" value="50"/>
+  </node>
+  
+  <node name="structure_learner" pkg="articulation_structure" type="structure_learner_srv" output="screen">
+    <param name="filter_models" value="rigid prismatic rotational"/>
+  </node>
+
+  <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/webcam_demo/webcam_demo.vcg" />
+
+</launch>

@@ -1,0 +1,21 @@
+<launch>
+	<node 
+		pkg="articulation_models" type="simple_publisher.py" name="simple_publisher" output="screen"
+		args="
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise1.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise2.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise3.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise4.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise5.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise6.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise7.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise8.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise9.log
+			$(find articulation_tutorials)/demo_fitting/data/cosine-synth/cosine-noise10.log
+		"/>
+
+	<node pkg="articulation_models" type="model_learner_msg" name="model_learner" output="screen"/>
+
+	<node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/demo_fitting/fit_models.vcg" />
+
+</launch>

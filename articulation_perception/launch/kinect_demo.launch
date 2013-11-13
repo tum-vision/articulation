@@ -1,0 +1,26 @@
+<launch>
+	<include file="$(find openni_camera)/launch/openni_node.launch"/>
+	
+  <arg name="debug" default="false"/>
+  <!-- Several possibilities to debug (uncomment only one)-->
+  <!--arg if="$(arg debug)" name="launch_prefix" value="/usr/bin/gdb -ex run -args"/>
+  <arg if="$(arg debug)" name="launch_prefix" value="/usr/bin/xterm -rv -e gdb -ex run -args"/-->
+  <arg if="$(arg debug)" name="launch_prefix" value="/usr/bin/kdbg "/>
+  <arg unless="$(arg debug)" name="launch_prefix" value=""/>
+  
+  <node pkg="articulation_perception" type="detector" respawn="false" output="screen" name="detector"  launch-prefix="$(arg launch_prefix)">
+    	<param name="planes" value="2"/>
+    	<param name="show_images" value="true"/>
+    	<param name="ransac_distance" value="0.01"/>
+    	<param name="filter_z" value="2.0"/>
+	</node>
+	
+	<node pkg="articulation_models" type="model_learner_msg" respawn="false" output="screen" name="model_learner_msg">
+	    <param name="filter_models" value="rigid rotational prismatic"/>
+	    <param name="sigma_position" value="0.01"/>
+	    <param name="sigma_orientation" value="0.1"/>
+    </node>
+
+  <node type="throttle" pkg="topic_tools" name="points_throttle" args="messages /camera/rgb/points 2" />
+    <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_perception)/launch/kinect_demo.vcg" />
+</launch>

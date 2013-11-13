@@ -1,0 +1,6 @@
+#!/bin/bash
+source ~/.bashrc.ros
+export ROS_MASTER_URI=http://isw:11311
+
+cd $(dirname $0)
+make -s

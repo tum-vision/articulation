@@ -1,0 +1,19 @@
+name: Articulation rviz Plugin
+library: articulation_rviz_plugin
+displays:
+  - 
+    class_name: articulation_rviz_plugin::TrackDisplay
+    display_name: Articulated Track
+    description: |
+      Visualizes articulation tracks  (i.e., articulation_models::TrackMsg messages)
+  - 
+    class_name: articulation_rviz_plugin::ModelDisplay
+    display_name: Articulation Model
+    description: |
+      Visualizes articulation models (i.e., articulation_models::ModelMsg messages)
+  - 
+    class_name: articulation_rviz_plugin::CameraDisplaySave
+    display_name: Camera Display Image Saver
+    description: |
+      Visualize camera image together with model and save to disk
+      

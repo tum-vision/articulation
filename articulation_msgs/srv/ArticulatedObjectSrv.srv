@@ -1,0 +1,17 @@
+# Generic service description for model fitting, selection, and evaluation for articualted objects
+#
+# A client requests a model operation (like model fitting, model selection
+# or model evaluation), by storing the observed trajectory of all observed parts in object.parts. 
+# Optionally, the client can also specify link models in object.models, or leave it to the model
+# selection algorithm to learn the models and recover the kinematic structure.
+# For more details, see the documentation at http://www.ros.org/wiki/articulation_models
+#
+
+articulation_msgs/ArticulatedObjectMsg object      	# request (e.g., containing an observed
+                                      			   	# trajectory of an articulated object)
+---
+articulation_msgs/ArticulatedObjectMsg object      	# response (e.g., after model fitting and
+                                      				# selection, contains the model name,
+                                      				# and the projection of the observed trajectory
+                                      				# on the model
+ 

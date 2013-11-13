@@ -1,0 +1,38 @@
+<launch>
+	<node 
+		pkg="articulation_models" type="prior_publisher.py" name="simple_publisher" output="screen"
+		args="
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00389.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00390.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00391.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00392.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00393.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00394.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00395.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00396.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00397.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00401.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00403.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00404.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00405.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00406.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00407.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00408.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00410.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00411.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00412.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00413.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00414.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00415.log.zero.downsampled.half
+      $(find articulation_tutorials)/demo_fitting/data/kitchen/M2U00416.log.zero.downsampled.half
+		" >
+  </node>
+
+	<node pkg="articulation_models" type="model_learner_prior" name="model_learner" output="screen"> 
+    <param name="filter_models" value="rotational prismatic"/>
+    <param name="sigma_position" value="0.02"/>
+  </node>
+
+	<node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/demo_fitting/prior_clusters_kitchen.vcg" />
+
+</launch>

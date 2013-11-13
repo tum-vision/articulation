@@ -1,0 +1,9 @@
+<launch>
+
+	<node pkg="articulation_tutorials" type="model_fitting_demo" name="test_fitting" output="screen" />
+
+	<node pkg="articulation_models" type="model_learner_srv" name="model_learner_srv" output="screen"/>
+<!--
+	<node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find articulation_tutorials)/cpp_model_fitting/display_grid_axes_model.vcg" />
+-->
+</launch>

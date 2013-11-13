@@ -1,0 +1,22 @@
+<package>
+  <description brief="articulation_tutorials">
+
+     This package contains various tutorials on how to use, learn and evaluate articulation models. 
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation_tutorials</url>
+  <depend package="articulation_models"/>
+  <!-- does not work in fuerte
+  <depend package="articulation_rviz_plugin"/>
+  -->
+  <depend package="articulation_structure"/>
+  <rosdep name="eigen"/>
+  <depend package="checkerboard_detector2"/>
+  <depend package="uvc_cam2"/>
+  <depend package="image_proc"/>
+  <depend package="compressed_image_transport"/>
+</package>
+

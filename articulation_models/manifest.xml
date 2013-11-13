@@ -1,0 +1,35 @@
+<package>
+  <description brief="Estimates kinematic models for articulated objects like doors and drawers. ">
+
+<p>
+This package contains the core library for kinematic model fitting for articulated objects. Examples of articulated objects are gangway or cabinet doors, door handles, and drawers. 
+It provides both a C++ library for model fitting and selection, and nodes that make the functions of this library available as ROS services to other nodes.
+</p>
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation_models</url>
+
+  <depend package="geometry_msgs" />
+  <depend package="sensor_msgs" />
+  <depend package="visualization_msgs" />
+  <depend package="tf" />
+  
+  <depend package="gaussian_process" />
+  <depend package="articulation_msgs" />
+  <depend package="icp" />
+
+  <depend package="bullet" />
+  <rosdep name="eigen"/>
+  <rosdep name="libgsl"/>
+  <rosdep name="atlas"/>
+  
+  <export>
+    <cpp cflags="-I${prefix}/include -I${prefix}/msg/cpp -I${prefix}/srv/cpp" lflags="-L${prefix}/lib -larticulation_models -lgsl -lgslcblas -Wl,-rpath,${prefix}/lib"/>
+  </export>
+
+</package>
+
+

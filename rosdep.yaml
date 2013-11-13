@@ -1,0 +1,8 @@
+libgsl:
+  ubuntu:
+    libgsl0-dev
+libatlas:
+  ubuntu:
+    libatlas-base-dev 
+
+

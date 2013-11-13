@@ -1,0 +1,23 @@
+<launch>
+<group ns="eval_runtimes_planar">
+	<node 
+		pkg="articulation_models" type="window_eval.py" name="simple_publisher" output="screen" cwd="node" required="true"
+		args="eval_runtimes_planar
+	$(find articulation_tutorials)/demo_fitting/data/second_set/drawer/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/left_door/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/right_door/001.log
+	$(find articulation_tutorials)/demo_fitting/data/second_set/sliding_cabinet/001.log
+		" >
+    <param name="sigma_position" value="0.03"/>
+    <param name="models" value="0,1,2,3"/>
+    <param name="downsample" value="100"/>
+    <param name="show" value="True"/>
+  </node>
+
+	<node pkg="articulation_models" type="model_learner_prior" name="model_learner_prior" output="log"> 
+    <param name="filter_models" value="rotational prismatic"/>
+    <param name="sigma_position" value="0.03"/>
+  </node>
+
+</group>
+</launch>

@@ -1,0 +1,24 @@
+<package>
+  <description brief="ROS messages and services for describing articulation models of doors and drawers.">
+
+This package defines generic messages for communicating observed kinematic trajectories and articulation models. Further, this packages defines generic services for fitting, selecting and storing kinematic models from observed trajectories.
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/articulation_msgs</url>
+
+  <depend package="geometry_msgs" />
+  <depend package="sensor_msgs" />
+  <depend package="std_msgs" />
+  <depend package="visualization_msgs" />
+  
+  <export>
+    <cpp cflags="-I${prefix}/include -I${prefix}/msg_gen/cpp/include -I${prefix}/srv_gen/cpp/include" />
+  </export>
+
+
+</package>
+
+

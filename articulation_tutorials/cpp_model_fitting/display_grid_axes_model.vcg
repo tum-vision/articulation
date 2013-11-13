@@ -1,0 +1,97 @@
+Background\ ColorR=0
+Background\ ColorG=0
+Background\ ColorB=0
+Fixed\ Frame=/
+Target\ Frame=<Fixed Frame>
+Articulation\ Model.Alpha=0.5
+Articulation\ Model.ColorR=0.5
+Articulation\ Model.ColorG=0
+Articulation\ Model.ColorB=1
+Articulation\ Model.Enabled=1
+Articulation\ Model.Force\ scaling=0.01
+Articulation\ Model.Hessians=0
+Articulation\ Model.Jacobians=0
+Articulation\ Model.Latest\ obs\ only=0
+Articulation\ Model.Line\ Width=0.005
+Articulation\ Model.Model\ number=0
+Articulation\ Model.Model\ type=0
+Articulation\ Model.Pose\ Likelihood=2
+Articulation\ Model.Project\ Configurations=0
+Articulation\ Model.Sample\ Configurations=0
+Articulation\ Model.Sample\ Density=0.01
+Articulation\ Model.Sequence\ number=0
+Articulation\ Model.Show\ Forces=0
+Articulation\ Model.Show\ Model\ Name=1
+Articulation\ Model.Style=0
+Articulation\ Model.Topic=/model
+Articulation\ Model.Track\ number=0
+Articulation\ Model.Unique\ by=2
+Articulation\ Model2.Alpha=0.5
+Articulation\ Model2.ColorR=0.752941
+Articulation\ Model2.ColorG=0.752941
+Articulation\ Model2.ColorB=0.752941
+Articulation\ Model2.Enabled=1
+Articulation\ Model2.Force\ scaling=0.01
+Articulation\ Model2.Hessians=0
+Articulation\ Model2.Jacobians=0
+Articulation\ Model2.Latest\ obs\ only=0
+Articulation\ Model2.Line\ Width=0.005
+Articulation\ Model2.Model\ number=0
+Articulation\ Model2.Model\ type=0
+Articulation\ Model2.Pose\ Likelihood=0
+Articulation\ Model2.Project\ Configurations=1
+Articulation\ Model2.Sample\ Configurations=0
+Articulation\ Model2.Sample\ Density=0.01
+Articulation\ Model2.Sequence\ number=0
+Articulation\ Model2.Show\ Forces=0
+Articulation\ Model2.Show\ Model\ Name=0
+Articulation\ Model2.Style=0
+Articulation\ Model2.Topic=model
+Articulation\ Model2.Track\ number=0
+Articulation\ Model2.Unique\ by=2
+Axes.Enabled=1
+Axes.Length=0.1
+Axes.Radius=0.01
+Axes.Reference\ Frame=<Fixed Frame>
+Grid.Alpha=0.5
+Grid.Cell\ Size=0.1
+Grid.ColorR=0.5
+Grid.ColorG=0.5
+Grid.ColorB=0.5
+Grid.Enabled=1
+Grid.Line\ Style=0
+Grid.Line\ Width=0.03
+Grid.Normal\ Cell\ Count=0
+Grid.OffsetX=0
+Grid.OffsetY=0
+Grid.OffsetZ=0
+Grid.Plane=0
+Grid.Plane\ Cell\ Count=20
+Grid.Reference\ Frame=<Fixed Frame>
+Tool\ 2D\ Nav\ GoalTopic=goal
+Tool\ 2D\ Pose\ EstimateTopic=initialpose
+Camera\ Type=rviz::OrbitViewController
+Camera\ Config=0.246 1.329 3.78209 0.0291572 -0.274585 -0.195848
+Property\ Grid\ State=selection=Articulation Model.Enabled.Articulation Model.Jacobians;expanded=.Global Options,Articulation Model.Enabled,Articulation Model.Enabled.Articulation Model.StatusTopStatus,Axes.Enabled,Articulation Model2.Enabled,Articulation Model2.Enabled.Articulation Model2.StatusTopStatus,Grid.Enabled;scrollpos=0,15;splitterpos=169,339;ispageselected=1
+[Display0]
+Name=Articulation Model
+Package=articulation_rviz_plugin
+ClassName=articulation_rviz_plugin::ModelDisplay
+[Display1]
+Name=Axes
+Package=rviz
+ClassName=rviz::AxesDisplay
+[Display2]
+Name=Articulation Model2
+Package=articulation_rviz_plugin
+ClassName=articulation_rviz_plugin::ModelDisplay
+[Display3]
+Name=Grid
+Package=rviz
+ClassName=rviz::GridDisplay
+[Articulation\ Model.Force\ \(x]
+[Articulation\ Model.Force\ \(x/y]
+z\ or\ mag\)=0
+[Articulation\ Model2.Force\ \(x]
+[Articulation\ Model2.Force\ \(x/y]
+z\ or\ mag\)=0
